@@ -1,6 +1,6 @@
 class Post
 
-  attr_accessor :title
+  attr_accessor :title, :author
 
   @@all = []
 
@@ -9,9 +9,19 @@ class Post
     @@all << self
   end
 
-  def self.title
+  def self.all
     @@all
   end
-    
+
+  def author_name
+    if self.author
+      #if self (post instance) has an author
+      return self.author.name
+      #return the author name in this instance of self
+    else
+      #if the author doesnt have an author
+      return nil
+    end
+  end
 
 end
